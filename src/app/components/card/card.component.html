@@ -1,0 +1,45 @@
+
+<div class="conteinerCenter cardBackgroundColor"> 
+    <mat-card class="m-3 shadow p-3 mb-5 bg-body rounded card " >
+        <mat-card-title class="mt-2 " *ngIf="infoPokemon.name !== undefined">
+            {{ infoPokemon.name}}
+        </mat-card-title>
+        <mat-card-content >
+    
+            <div  class="flexcolumnCenter" >
+                <img src="{{ currentImage }}" class="mt-1 ">
+                <p> <strong> Experiencia </strong> </p>
+                <span> {{ infoPokemon.base_experience}} </span>
+            </div>
+            <div class="caracteristicas">
+                <div>
+                    <p>Ataque</p>
+                    <span> <strong> {{ infoPokemon.stats[1].base_stat }} </strong> </span>
+                </div>
+                <div>
+                    <p>Ataque especial</p>
+                    <span> <strong> {{ infoPokemon.stats[3].base_stat }} </strong></span>
+                </div>
+                <div>
+                    <p>Defensa</p>
+                    <span><strong> {{ infoPokemon.stats[2].base_stat }} </strong> </span>
+                </div>
+            </div>
+        </mat-card-content>
+        <mat-card-actions>
+            <hr>
+            <div class="elementosAlExtremo">
+                <button mat-raised-button color="primary" (click)='nextPokemon()'> Siguiente</button>
+                <button mat-raised-button color="primary" (click)='previousPokemon()' *ngIf="currentPokemon >= 2"> Anterior </button >
+
+            </div>
+        </mat-card-actions>
+    </mat-card>
+    <div > 
+
+    </div>
+
+</div>
+
+
+
